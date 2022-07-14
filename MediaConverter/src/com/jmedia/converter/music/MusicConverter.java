@@ -12,6 +12,8 @@ public final class MusicConverter {
         new MusicConverter().convert("media/music/guitarsample.mp3", "media/music/guitarsample.flac");
         new MusicConverter().convert("media/music/guitarsample.mp3", "media/music/guitarsample.opus");
         new MusicConverter().convert("media/music/guitarsample.mp3", "media/music/guitarsample.webm");
+
+        new MusicConverter().convert("media/music/guitarsample.m4a", "media/music/guitarsample.mp3");
     }
 
     public void convert(final String input, final String output) {
