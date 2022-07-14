@@ -1,4 +1,4 @@
-package com.jmedia.main;
+package com.main;
 
 public final class Main {
 

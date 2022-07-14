@@ -1,23 +1,29 @@
 package com.jmedia.converter.video;
 
+import com.jmedia.MediaTask;
+import com.jmedia.converter.MediaConverter;
+
 import java.io.IOException;
 
-public final class VideoConverter {
+public final class VideoConverter extends MediaConverter {
 
     public static void main(String[] args) {
-        new VideoConverter().convert("media/video/woman1.mp4", "media/video/woman1.mkv");
-        new VideoConverter().convert("media/video/woman1.mp4", "media/video/woman1.avi");
+        new VideoConverter("media/video/woman1.mp4", "media/video/woman1.mkv").make();
+        new VideoConverter("media/video/woman1.mp4", "media/video/woman1.avi").make();
     }
 
-    public void convert(final String input, final String output) {
-        final String ffmpegPath = "ffmpeg";
+    public VideoConverter(final String input, final String output) {
+        super(input, output);
+    }
 
-        String[] command=new String[]{ffmpegPath,"-i", input, "-c:v", "h264", "-c:a", "libvorbis", output};
+    @Override
+    public void make() {
+
+        String[] command=new String[]{ffmpegPath(),"-i", input(), "-c:v", "h264", "-c:a", "libvorbis", output()};
         try {
             Runtime.getRuntime().exec(command);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
 }
