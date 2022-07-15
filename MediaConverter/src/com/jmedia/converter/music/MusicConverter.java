@@ -1,8 +1,6 @@
 package com.jmedia.converter.music;
 
-import com.jmedia.converter.MediaConverter;
-
-import java.io.IOException;
+import com.jmedia.MediaConverter;
 
 public final class MusicConverter extends MediaConverter {
 
@@ -26,11 +24,7 @@ public final class MusicConverter extends MediaConverter {
     public void make() {
         String[] command={ffmpegPath(),"-i", input(), output()};
         if (output().contains("m4a")) command=new String[]{ffmpegPath(),"-i", input(), "-c:a", "aac", "-vn", output()};
-        try {
-            Runtime.getRuntime().exec(command);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        run(command);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.jmedia.converter;
+package com.jmedia;
 
 import com.jmedia.MediaTask;
 

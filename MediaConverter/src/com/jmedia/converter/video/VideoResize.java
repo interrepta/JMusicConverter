@@ -1,6 +1,6 @@
 package com.jmedia.converter.video;
 
-import com.jmedia.converter.MediaConverter;
+import com.jmedia.MediaConverter;
 
 import java.io.IOException;
 

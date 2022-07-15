@@ -1,8 +1,6 @@
 package com.jmedia.converter.images;
 
-import com.jmedia.converter.MediaConverter;
-
-import java.io.IOException;
+import com.jmedia.MediaConverter;
 
 public final class ImagesConverter extends MediaConverter {
 
@@ -21,10 +19,6 @@ public final class ImagesConverter extends MediaConverter {
     @Override
     public void make() {
         String[] command={ffmpegPath(),"-i", input(), output()};
-        try {
-            Runtime.getRuntime().exec(command);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        run(command);
     }
 }
