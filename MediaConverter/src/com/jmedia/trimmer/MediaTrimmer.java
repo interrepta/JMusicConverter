@@ -1,8 +1,6 @@
 package com.jmedia.trimmer;
 
-import com.jmedia.MediaConverter;
-
-import javax.print.attribute.standard.Media;
+import com.jmedia.converter.MediaConverter;
 
 public final class MediaTrimmer extends MediaConverter {
     private final String start;

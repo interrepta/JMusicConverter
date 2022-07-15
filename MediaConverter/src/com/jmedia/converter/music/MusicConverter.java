@@ -1,6 +1,6 @@
 package com.jmedia.converter.music;
 
-import com.jmedia.MediaConverter;
+import com.jmedia.converter.MediaConverter;
 
 public final class MusicConverter extends MediaConverter {
 

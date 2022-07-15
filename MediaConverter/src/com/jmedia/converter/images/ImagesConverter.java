@@ -1,6 +1,6 @@
 package com.jmedia.converter.images;
 
-import com.jmedia.MediaConverter;
+import com.jmedia.converter.MediaConverter;
 
 public final class ImagesConverter extends MediaConverter {
 
