@@ -2,6 +2,8 @@ package com.jmedia.converter;
 
 import com.jmedia.MediaTask;
 
+import java.io.IOException;
+
 public abstract class MediaConverter implements MediaTask {
 
     private final String input;
@@ -23,6 +25,14 @@ public abstract class MediaConverter implements MediaTask {
     @Override
     public void make() {
 
+    }
+
+    protected void run(final String [] command) {
+        try {
+            Runtime.getRuntime().exec(command);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
