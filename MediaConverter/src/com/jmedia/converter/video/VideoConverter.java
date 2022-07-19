@@ -19,10 +19,6 @@ public final class VideoConverter extends MediaConverter {
     public void make() {
 
         String[] command=new String[]{ffmpegPath(),"-i", input(), "-c:v", "h264", "-c:a", "libvorbis", output()};
-        try {
-            Runtime.getRuntime().exec(command);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        run(command);
     }
 }

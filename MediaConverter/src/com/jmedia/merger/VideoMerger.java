@@ -12,9 +12,6 @@ public class VideoMerger extends MediaConverter {
 
     @Override
     public void make() {
-
-        final StringBuilder mediaString = new StringBuilder();
-
         final String [] command = {ffmpegPath(), "-f", "concat", "-safe", "0", "-i", input(), "-c", "copy", output()};
         run(command);
     }
