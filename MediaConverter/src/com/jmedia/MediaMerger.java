@@ -1,4 +1,4 @@
-package com.jmedia.merger;
+package com.jmedia;
 
 import com.jmedia.MediaTask;
 

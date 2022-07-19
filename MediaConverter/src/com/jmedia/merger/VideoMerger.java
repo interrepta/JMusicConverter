@@ -2,9 +2,6 @@ package com.jmedia.merger;
 
 import com.jmedia.converter.MediaConverter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class VideoMerger extends MediaConverter {
     public VideoMerger(final String input, final String output) {
         super(input, output);

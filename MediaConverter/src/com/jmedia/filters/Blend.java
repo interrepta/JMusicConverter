@@ -40,6 +40,12 @@ import com.jmedia.converter.MediaConverter;
  * - subtract
  * - vividlight
  * - xor
+ * - all_expr='A*(if(gte(T,10),1,T/10))+B*(1-(if(gte(T,10),1,T/10)))'
+ * - all_expr='A*(X/W)+B*(1-X/W)'
+ * - all_expr='if(eq(mod(X,2),mod(Y,2)),A,B)'
+ * - all_expr='if(gte(N*SW+X,W),A,B)'
+ * - all_expr='if(gte(Y-N*SH,0),A,B)'
+ * - all_expr='if(gt(X,Y*(W/H)),A,B)'
  */
 public final class Blend extends MediaConverter {
 
@@ -49,7 +55,7 @@ public final class Blend extends MediaConverter {
 
     @Override
     public void make() {
-        final String filterOption = "softlight";
+        final String filterOption = "all_expr='if(gt(X,Y*(W/H)),A,B)'";
         String[] command=new String[]{ffmpegPath(),"-i", input(),"-i", secondInput(), "-filter_complex", "blend=" + filterOption, output()};
         run(command);
 
